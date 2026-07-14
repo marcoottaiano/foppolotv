@@ -1,0 +1,123 @@
+.page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 10% 20%, #fef6d8 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, #d4ecff 0%, transparent 50%),
+    linear-gradient(160deg, #fffaf0 0%, #ffffff 45%, #f7fcff 100%);
+}
+
+.wrapper {
+  width: min(900px, 100%);
+}
+
+.title {
+  margin-bottom: 14px;
+  text-align: center;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, clamp(120px, 14vw, 170px));
+  justify-content: center;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.channelCell,
+.emptyCell {
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+}
+
+.channelCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d6e4f0;
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.channelImage {
+  width: auto;
+  height: auto;
+  /* max-width: clamp(34px, 3vw, 48px);
+  max-height: clamp(34px, 3vw, 48px); */
+  object-fit: contain;
+  /* border-radius: 10px; */
+}
+
+.channelName {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(0.66rem, 0.52rem + 0.28vw, 0.88rem);
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  padding: 0 6px;
+  line-height: 1.2;
+}
+
+.emptyCell {
+  border: 1px dashed #c7d2e0;
+  background: #f8fbfe99;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .channelCell:hover {
+    transform: translateY(-2px);
+    border-color: #8fb5e3;
+    box-shadow: 0 10px 20px -14px #0f172a;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 12px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 8px;
+  }
+
+  .channelCell,
+  .emptyCell {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 561px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    width: min(1120px, 100%);
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, clamp(170px, 12vw, 220px));
+    gap: clamp(12px, 1vw, 18px);
+  }
+
+  .channelImage {
+    width: 70px;
+    height: auto;
+  }
+
+  .channelName {
+    font-size: 0.95rem;
+  }
+}
