@@ -13,49 +13,49 @@ const CHANNELS: Channel[] = [
     id: "rai-1",
     name: "Rai 1",
     imageSrc: "/channels/rai-1.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/55gapNdb7So?si=zv1FQr7a-ldJEAI8",
   },
   {
     id: "rai-2",
     name: "Rai 2",
     imageSrc: "/channels/rai-2.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://www.youtube.com/", // da chiedere
   },
   {
     id: "rete-4",
     name: "Rete 4",
     imageSrc: "/channels/rete-4.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/7kpfRB_cD3c?si=_xMih7EEPDrqK9qM",
   },
   {
     id: "canale-5",
     name: "Canale 5",
     imageSrc: "/channels/canale-5.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/072-f4jgdIA?si=lkcKkuT8DBwcg-aP", // da controllare
   },
   {
     id: "italia-1",
     name: "Italia 1",
     imageSrc: "/channels/italia-1.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/SDlFcShNMGc?si=7LbSda4T9ol0UZHG",
   },
   {
     id: "real-time",
     name: "Real Time",
     imageSrc: "/channels/real-time.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/VexFYQgy7BQ?si=1114g9XtfrXtyqGe", // da controllare
   },
   {
     id: "dmax",
     name: "DMAX",
     imageSrc: "/channels/dmax.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://www.youtube.com/", // da chiedere
   },
   {
     id: "prime-video",
     name: "Prime Video",
     imageSrc: "/channels/prime-video.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/6fGWYz9IbuY?si=0wx-59KEhgG206Yd", // da controllare
   },
   {
     id: "disney-plus",
