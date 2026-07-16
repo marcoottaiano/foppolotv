@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import styles from "./page.module.css";
 
+const VIEWED_CHANNELS_KEY = "foppolotv:viewed-channels";
+
 type Channel = {
   id: string;
   name: string;
@@ -19,7 +21,43 @@ type ChannelVideoGridProps = {
 
 export default function ChannelVideoGrid({ channels, gridCells }: ChannelVideoGridProps) {
   const [selectedChannel, setSelectedChannel] = useState<Channel | null>(null);
+  const [viewedChannelIds, setViewedChannelIds] = useState<ReadonlySet<string>>(() => {
+    if (typeof window === "undefined") {
+      return new Set();
+    }
+
+    try {
+      const rawValue = sessionStorage.getItem(VIEWED_CHANNELS_KEY);
+      if (!rawValue) {
+        return new Set();
+      }
+
+      const parsedValue: unknown = JSON.parse(rawValue);
+      if (!Array.isArray(parsedValue)) {
+        return new Set();
+      }
+
+      const validIds = parsedValue.filter((value): value is string => typeof value === "string");
+      return new Set(validIds);
+    } catch {
+      sessionStorage.removeItem(VIEWED_CHANNELS_KEY);
+      return new Set();
+    }
+  });
   const gridItems = Array.from({ length: gridCells }, (_, index) => channels[index] ?? null);
+
+  const markChannelAsViewed = (channelId: string) => {
+    setViewedChannelIds((previousIds) => {
+      if (previousIds.has(channelId)) {
+        return previousIds;
+      }
+
+      const nextIds = new Set(previousIds);
+      nextIds.add(channelId);
+      sessionStorage.setItem(VIEWED_CHANNELS_KEY, JSON.stringify(Array.from(nextIds)));
+      return nextIds;
+    });
+  };
 
   useEffect(() => {
     if (!selectedChannel) {
@@ -47,10 +85,20 @@ export default function ChannelVideoGrid({ channels, gridCells }: ChannelVideoGr
           }
 
           return (
-            <button key={channel.id} type="button" className={styles.channelCell} onClick={() => setSelectedChannel(channel)}>
-              <div className={styles.channelMeta}>
+            <button
+              key={channel.id}
+              type="button"
+              className={`${styles.channelCell} ${viewedChannelIds.has(channel.id) ? styles.channelCellSeen : ""}`}
+              aria-pressed={viewedChannelIds.has(channel.id)}
+              onClick={() => {
+                markChannelAsViewed(channel.id);
+                setSelectedChannel(channel);
+              }}
+            >
+              <div className={`${styles.channelMeta} ${viewedChannelIds.has(channel.id) ? styles.channelMetaSeen : ""}`}>
                 <Image src={channel.imageSrc} alt={`Logo ${channel.name}`} width={56} height={56} className={styles.channelImage} />
                 <span className={styles.channelName}>{channel.name}</span>
+                {viewedChannelIds.has(channel.id) ? <span className={styles.seenBadge}>✓</span> : null}
               </div>
             </button>
           );

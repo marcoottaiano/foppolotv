@@ -49,6 +49,11 @@
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
+.channelCellSeen {
+  border-color: #9aa5b4;
+  background: #f3f5f8;
+}
+
 .channelMeta {
   display: flex;
   flex-direction: column;
@@ -60,6 +65,10 @@
   padding: 6px;
   border-radius: 10px;
   background: #f8fbff;
+}
+
+.channelMetaSeen {
+  background: linear-gradient(170deg, #eef2f6 0%, #f7f9fc 100%);
 }
 
 .channelImage {
@@ -78,6 +87,22 @@
   text-align: center;
   padding: 0 4px;
   line-height: 1.2;
+}
+
+.seenBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #9ca6b4;
+  background: #ffffff;
+  color: #3a4554;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
 }
 
 .modalOverlay {
@@ -157,6 +182,10 @@
     transform: translateY(-2px);
     border-color: #8fb5e3;
     box-shadow: 0 10px 20px -14px #0f172a;
+  }
+
+  .channelCellSeen:hover {
+    border-color: #6f7b8b;
   }
 }
 
