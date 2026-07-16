@@ -13,73 +13,73 @@ const CHANNELS: Channel[] = [
     id: "rai-1",
     name: "Rai 1",
     imageSrc: "/channels/rai-1.webp",
-    youtubeUrl: "https://youtu.be/55gapNdb7So?si=zv1FQr7a-ldJEAI8",
+    youtubeUrl: "https://youtu.be/55gapNdb7So?is=UCCdCf5B0n4JnAN7",
   },
   {
     id: "rai-2",
     name: "Rai 2",
     imageSrc: "/channels/rai-2.webp",
-    youtubeUrl: "https://www.youtube.com/", // da chiedere
+    youtubeUrl: "https://www.youtube.com/watch?v=0aYc0FWNGNM",
   },
   {
     id: "rete-4",
     name: "Rete 4",
     imageSrc: "/channels/rete-4.webp",
-    youtubeUrl: "https://youtu.be/7kpfRB_cD3c?si=_xMih7EEPDrqK9qM",
+    youtubeUrl: "https://youtu.be/hyQY88sLA60?is=wmbQ8bBhFwr-GqMP",
   },
   {
     id: "canale-5",
     name: "Canale 5",
     imageSrc: "/channels/canale-5.webp",
-    youtubeUrl: "https://youtu.be/072-f4jgdIA?si=lkcKkuT8DBwcg-aP", // da controllare
+    youtubeUrl: "https://youtu.be/pxBSU5fyLgo?is=KFbQ0Y5NzE4kjTkR",
   },
   {
     id: "italia-1",
     name: "Italia 1",
     imageSrc: "/channels/italia-1.webp",
-    youtubeUrl: "https://youtu.be/SDlFcShNMGc?si=7LbSda4T9ol0UZHG",
+    youtubeUrl: "https://youtube.com/watch?v=SDlFcShNMGc&feature=shared",
   },
   {
     id: "real-time",
     name: "Real Time",
     imageSrc: "/channels/real-time.webp",
-    youtubeUrl: "https://youtu.be/VexFYQgy7BQ?si=1114g9XtfrXtyqGe", // da controllare
+    youtubeUrl: "https://youtube.com/shorts/IapBu-zNfAg?is=S97ZjeuvyN01NUGg",
   },
   {
     id: "dmax",
     name: "DMAX",
     imageSrc: "/channels/dmax.webp",
-    youtubeUrl: "https://www.youtube.com/", // da chiedere
+    youtubeUrl: "https://youtu.be/KaY4zly6veE?is=oyvmDauTw0Wyq7-H",
   },
   {
     id: "prime-video",
     name: "Prime Video",
     imageSrc: "/channels/prime-video.webp",
-    youtubeUrl: "https://youtu.be/6fGWYz9IbuY?si=0wx-59KEhgG206Yd", // da controllare
+    youtubeUrl: "https://youtu.be/6MRxroFu-1o?is=pqgMcMVDA8XCHzwa",
   },
   {
     id: "disney-plus",
     name: "Disney Plus",
     imageSrc: "/channels/disney-plus.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtube.com/watch?v=k9bUTfFF3_4&feature=shared",
   },
   {
     id: "netflix",
     name: "Netflix",
     imageSrc: "/channels/netflix.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/VoudbaFKI9Q?is=bz4MRaakJ_SMuVxx",
   },
   {
     id: "mtv",
     name: "MTV",
     imageSrc: "/channels/mtv.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/EMUH9eLFRj0?is=yYbGqhKpiLRq1VEw",
   },
   {
     id: "rai-sport",
     name: "Rai Sport",
     imageSrc: "/channels/rai-sport.webp",
-    youtubeUrl: "https://www.youtube.com/",
+    youtubeUrl: "https://youtu.be/KKi1YtaJ3Q0?is=zDVIwJtu1WkVqyXX",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <section className={styles.wrapper}>
-        <h1 className={styles.title}>Canali TV</h1>
+        <h1 className={styles.title}>Foppolo TV</h1>
         <div className={styles.grid}>
           {gridItems.map((channel, index) => {
             if (!channel) {
